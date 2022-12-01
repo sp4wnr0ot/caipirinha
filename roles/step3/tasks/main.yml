@@ -1,0 +1,19 @@
+---
+- hosts: localhost
+  connection: local
+
+  vars_prompt:
+    - name: step3
+      prompt: Shake all together 
+      default: "OK"
+      private: no
+
+  tasks:
+    - name: Step Three
+      debug:
+        msg: "Status --> {{ step3 }}"
+  
+    - ansible.builtin.pause:
+        seconds: 5
+        #prompt: Type ENTER to start
+        echo: no

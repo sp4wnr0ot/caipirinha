@@ -1,0 +1,22 @@
+---
+- name: Receita Caipirinha
+  hosts: localhost
+  vars:
+    receipt: |-
+      Ingredients
+
+      1. ½x lime, quartered
+      2. 1x teaspoon white sugar
+      3. 2x ½ fluid ounces CACHAÇA (Brazilian rum)
+      4. 1x Cup ice cubes
+      
+  tasks:
+    - name: print receipt
+      ansible.builtin.debug:
+        msg: "{{ receipt.split('\n') }}"
+
+    - ansible.builtin.pause:
+        seconds: 10
+        #prompt: Type ENTER to start
+        echo: no
+

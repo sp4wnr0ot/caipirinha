@@ -1,0 +1,6 @@
+---
+    - name: Caipirinha Step 3
+      hosts: localhost
+      gather_facts: False
+      roles:
+        - role: step-3

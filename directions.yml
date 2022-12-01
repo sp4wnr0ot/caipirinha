@@ -1,0 +1,46 @@
+---
+- hosts: localhost
+  connection: local
+
+  vars_prompt:
+    - name: step1
+      prompt: Squeeze and drop lime wedges into a large rocks glass. 
+      default: "OK"
+      private: no
+
+    - name: step2
+      prompt: Add sugar and muddle until juices release.
+      default: "OK"
+      private: no
+
+    - name: step3
+      prompt: Shake all together 
+      default: "OK"
+      private: no
+
+    - name: step4
+      prompt: Pour in cachaça and ice. Stir well.
+      default: "OK"
+      private: no
+
+  tasks:
+    - name: Step One
+      debug:
+        msg: "Status --> {{ step1 }}"
+
+    - name: Step Two
+      debug:
+        msg: "Status --> {{ step2 }}"
+
+    - name: Step Three
+      debug:
+        msg: "Status --> {{ step3 }}"
+  
+    - name: Step Four
+      debug:
+        msg: "Status --> {{ step4 }}"
+
+    - ansible.builtin.pause:
+        seconds: 5
+        #prompt: Type ENTER to start
+        echo: no
