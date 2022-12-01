@@ -1,6 +1,19 @@
 ---
-    - name: Caipirinha Step 4
-      hosts: localhost
-      gather_facts: False
-      roles:
-        - role: step4
+- hosts: localhost
+  connection: local
+
+  vars_prompt:
+    - name: step4
+      prompt: Pour in cachaça and ice. Stir well.
+      default: "OK"
+      private: no
+
+  tasks:
+    - name: Step Four
+      debug:
+        msg: "Status --> {{ step4 }}"
+
+    - ansible.builtin.pause:
+        seconds: 5
+        #prompt: Type ENTER to start
+        echo: no
