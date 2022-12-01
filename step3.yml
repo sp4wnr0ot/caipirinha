@@ -3,4 +3,4 @@
       hosts: localhost
       gather_facts: False
       roles:
-        - role: step-3
+        - role: step3
