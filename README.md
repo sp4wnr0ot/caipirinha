@@ -3,5 +3,4 @@
 ---
 ## **History**
 ---
-
 Thought to have originated in Paratay, São Paulo – Brazil it is no longer simply Brazils national drink but has now become a great classic cocktail around the world. Some believe that it was initially prepared as a medicine to ease the effects of the Spanish Flu towards the end of World War I.
