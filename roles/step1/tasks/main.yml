@@ -1,6 +1,5 @@
 ---
-- hosts: localhost
-  connection: local
+- name: step1
 
   vars_prompt:
     - name: step1

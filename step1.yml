@@ -1,6 +1,6 @@
 ---
-    - name: Caipirinha Step 1
-      hosts: localhost
-      gather_facts: False
-      roles:
-        - role: step1
+- name: Caipirinha Step 1
+  hosts: localhost
+  gather_facts: False
+  roles:
+    - role: step1
