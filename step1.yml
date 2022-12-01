@@ -1,12 +1,9 @@
 ---
 - hosts: localhost
   connection: local
-
-  vars_prompt:
+ 
+  vars:
     - name: step1
-      prompt: Squeeze and drop lime wedges into a large rocks glass. 
-      default: "OK"
-      private: no
 
   tasks:
     - name: Step One
