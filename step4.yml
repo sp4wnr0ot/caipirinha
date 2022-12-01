@@ -1,19 +1,19 @@
 ---
-- hosts: localhost
-  connection: local
-
-  vars_prompt:
-    - name: step4
-      prompt: Pour in cachaça and ice. Stir well.
-      default: "OK"
-      private: no
-
+- name: Step4
+  hosts: localhost
+  vars:
+    step4: |-
+      Step 4
+      Shake all together.
+      
+      
   tasks:
-    - name: Step Four
-      debug:
-        msg: "Status --> {{ step4 }}"
+    - name: print step4
+      ansible.builtin.debug:
+        msg: "{{ step4.split('\n') }}"
 
     - ansible.builtin.pause:
         seconds: 5
         #prompt: Type ENTER to start
         echo: no
+

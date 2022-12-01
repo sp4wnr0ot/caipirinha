@@ -1,16 +1,19 @@
 ---
-- hosts: localhost
-  connection: local
- 
+- name: Step1 
+  hosts: localhost
   vars:
-    - name: step1
-
+    step1: |-
+      Step 1
+      Squeeze and drop lime wedges into a large rocks glass.
+      
+      
   tasks:
-    - name: Step One
-      debug:
-        msg: "Status --> {{ step1 }}"
+    - name: print step1
+      ansible.builtin.debug:
+        msg: "{{ step1.split('\n') }}"
 
     - ansible.builtin.pause:
         seconds: 5
         #prompt: Type ENTER to start
         echo: no
+

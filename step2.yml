@@ -1,19 +1,19 @@
 ---
-- hosts: localhost
-  connection: local
-
-  vars_prompt:
-    - name: step2
-      prompt: Add sugar and muddle until juices release.
-      default: "OK"
-      private: no
-
+- name: Step2
+  hosts: localhost
+  vars:
+    step2: |-
+      Step 2
+      Add sugar and muddle until juices release.
+      
+      
   tasks:
-    - name: Step Two
-      debug:
-        msg: "Status --> {{ step2 }}"
+    - name: print step2
+      ansible.builtin.debug:
+        msg: "{{ step2.split('\n') }}"
 
     - ansible.builtin.pause:
         seconds: 5
         #prompt: Type ENTER to start
         echo: no
+
